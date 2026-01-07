@@ -23,7 +23,7 @@ const Profile = () => {
 
     const fetchUserBookings = async (userId) => {
         try {
-            const res = await axios.get(`http://localhost:4000/api/bookings/user/${userId}`, {
+            const res = await axios.get(`https://travel-agency-coursework.onrender.com/api/bookings/user/${userId}`, {
                 withCredentials: true
             });
 
@@ -36,7 +36,7 @@ const Profile = () => {
 
     const fetchUserData = async (userId) => {
         try {
-            const res = await axios.get(`http://localhost:4000/api/users/${userId}`, {
+            const res = await axios.get(`https://travel-agency-coursework.onrender.com/api/users/${userId}`, {
                 withCredentials: true
             });
 

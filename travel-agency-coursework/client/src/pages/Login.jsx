@@ -23,7 +23,7 @@ const Login = () => {
         dispatch({ type: "LOGIN_START" });
 
         try {
-            const res = await axios.post("http://localhost:4000/api/auth/login", credentials, {
+            const res = await axios.post("https://travel-agency-coursework.onrender.com/api/auth/login", credentials, {
                 withCredentials: true
             });
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data.data });
@@ -39,7 +39,7 @@ const Login = () => {
         const token = credentialResponse.credential;
 
         try {
-            const res = await axios.post("http://localhost:4000/api/auth/google", {
+            const res = await axios.post("https://travel-agency-coursework.onrender.com/api/auth/google", {
                 token: token
             }, { withCredentials: true });
 

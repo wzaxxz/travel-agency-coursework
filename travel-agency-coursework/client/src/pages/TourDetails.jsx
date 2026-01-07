@@ -38,7 +38,7 @@ const TourDetails = () => {
 
     const fetchTour = async () => {
         try {
-            const res = await axios.get(`http://localhost:4000/api/tours/${id}`);
+            const res = await axios.get(`https://travel-agency-coursework.onrender.com/api/tours/${id}`);
             const data = res.data.data ? res.data.data : res.data;
             setTour(data);
             setLoading(false);
@@ -72,7 +72,7 @@ const TourDetails = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:4000/api/bookings', {
+            await axios.post('https://travel-agency-coursework.onrender.com/api/bookings', {
                 ...credentials,
                 tourName: tour.title,
                 tourId: tour._id,
@@ -93,7 +93,7 @@ const TourDetails = () => {
         if (!user) return alert("Будь ласка, увійдіть!");
 
         try {
-            await axios.post(`http://localhost:4000/api/tours/${id}/reviews`, {
+            await axios.post(`https://travel-agency-coursework.onrender.com/api/tours/${id}/reviews`, {
                 username: user.username,
                 rating: reviewRating,
                 comment: reviewText
@@ -109,7 +109,7 @@ const TourDetails = () => {
 
     const submitAdminReply = async (reviewId) => {
         try {
-            await axios.put(`http://localhost:4000/api/tours/${id}/reviews/${reviewId}/reply`, {
+            await axios.put(`https://travel-agency-coursework.onrender.com/api/tours/${id}/reviews/${reviewId}/reply`, {
                 replyText: replyText
             });
             alert("Відповідь додано!");

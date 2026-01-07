@@ -34,7 +34,7 @@ const TourCard = ({ tour }) => {
 
         try {
             const res = await axios.put(
-                `http://localhost:4000/api/users/${user._id}/favorites`,
+                `https://travel-agency-coursework.onrender.com/api/users/${user._id}/favorites`,
                 { tourId: tour._id },
                 { withCredentials: true } // 🔥 ВАЖЛИВО: передаємо куки
             );

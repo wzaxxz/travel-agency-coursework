@@ -28,10 +28,10 @@ const AdminPanel = () => {
 
     const fetchData = async () => {
         try {
-            const bookingsRes = await axios.get('http://localhost:4000/api/bookings', { withCredentials: true });
+            const bookingsRes = await axios.get('https://travel-agency-coursework.onrender.com/api/bookings', { withCredentials: true });
             setBookings(Array.isArray(bookingsRes.data) ? bookingsRes.data : (bookingsRes.data.data || []));
 
-            const toursRes = await axios.get('http://localhost:4000/api/tours', { withCredentials: true });
+            const toursRes = await axios.get('https://travel-agency-coursework.onrender.com/api/tours', { withCredentials: true });
             setTours(Array.isArray(toursRes.data) ? toursRes.data : (toursRes.data.data || []));
         } catch (err) {
             console.error("Помилка завантаження:", err);
@@ -58,11 +58,11 @@ const AdminPanel = () => {
         try {
             const payload = { ...tourData, startDates: addedDates };
             if (isEditing) {
-                await axios.put(`http://localhost:4000/api/tours/${editTourId}`, payload, { withCredentials: true });
+                await axios.put(`https://travel-agency-coursework.onrender.com/api/tours/${editTourId}`, payload, { withCredentials: true });
                 alert('Тур оновлено! 📝');
                 setIsEditing(false); setEditTourId(null);
             } else {
-                await axios.post('http://localhost:4000/api/tours', payload, { withCredentials: true });
+                await axios.post('https://travel-agency-coursework.onrender.com/api/tours', payload, { withCredentials: true });
                 alert('Тур створено! 🎉');
             }
             setTourData({
@@ -78,7 +78,7 @@ const AdminPanel = () => {
 
     const deleteTour = async (id) => {
         if (window.confirm("Видалити тур?")) {
-            await axios.delete(`http://localhost:4000/api/tours/${id}`, { withCredentials: true });
+            await axios.delete(`https://travel-agency-coursework.onrender.com/api/tours/${id}`, { withCredentials: true });
             fetchData();
         }
     };
@@ -97,13 +97,13 @@ const AdminPanel = () => {
     };
 
     const updateBookingStatus = async (id, status) => {
-        await axios.put(`http://localhost:4000/api/bookings/${id}`, { status }, { withCredentials: true });
+        await axios.put(`https://travel-agency-coursework.onrender.com/api/bookings/${id}`, { status }, { withCredentials: true });
         fetchData();
     };
 
     const deleteBooking = async (id) => {
         if(window.confirm("Видалити бронювання?")) {
-            await axios.delete(`http://localhost:4000/api/bookings/${id}`, { withCredentials: true });
+            await axios.delete(`https://travel-agency-coursework.onrender.com/api/bookings/${id}`, { withCredentials: true });
             fetchData();
         }
     };

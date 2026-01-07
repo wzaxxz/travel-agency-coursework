@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         const fetchTours = async () => {
             try {
-                const res = await axios.get('http://localhost:4000/api/tours');
+                const res = await axios.get('https://travel-agency-coursework.onrender.com/api/tours');
                 const data = res.data.data ? res.data.data : res.data;
                 setTours(data);
                 setLoading(false);
@@ -35,7 +35,7 @@ const Home = () => {
 
         setLoading(true);
         try {
-            const res = await axios.get(`http://localhost:4000/api/tours/search/getTourBySearch?city=${city}`);
+            const res = await axios.get(`https://travel-agency-coursework.onrender.com/api/tours/search/getTourBySearch?city=${city}`);
             const data = res.data.data ? res.data.data : res.data;
 
             setSearchResults(data);

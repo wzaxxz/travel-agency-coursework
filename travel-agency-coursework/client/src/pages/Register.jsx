@@ -19,7 +19,7 @@ const Register = () => {
     const handleClick = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:4000/api/auth/register", credentials);
+            await axios.post("https://travel-agency-coursework.onrender.com/api/auth/register", credentials);
             alert("Реєстрація успішна! Тепер ви можете увійти.");
             navigate("/login");
         } catch (err) {

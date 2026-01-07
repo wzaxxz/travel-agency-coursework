@@ -10,7 +10,7 @@ const HotTours = () => {
     useEffect(() => {
         const fetchTours = async () => {
             try {
-                const res = await axios.get('http://localhost:4000/api/tours');
+                const res = await axios.get('https://travel-agency-coursework.onrender.com/api/tours');
                 const featuredTours = res.data.data ? res.data.data.filter(tour => tour.featured) : res.data.filter(tour => tour.featured);
                 setTours(featuredTours);
                 setLoading(false);
