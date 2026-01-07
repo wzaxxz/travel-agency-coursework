@@ -1,0 +1,80 @@
+.info-page-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid #334155;
+}
+
+.info-page-container h1 {
+    color: var(--primary);
+    margin-bottom: 25px;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.info-page-container h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.info-page-container section, .faq-item {
+    margin-bottom: 30px;
+}
+
+.info-page-container p, .info-page-container li {
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.insurance-plans {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background: var(--bg-input);
+    border: 1px solid #334155;
+    padding: 25px;
+    border-radius: var(--radius);
+    flex: 1;
+    min-width: 250px;
+    transition: transform 0.3s;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.plan-card h3 {
+    color: var(--text-main);
+    border-bottom: 1px solid #334155;
+    padding-bottom: 10px;
+}
+
+.plan-card.recommended {
+    border: 2px solid var(--secondary);
+    background: rgba(239, 68, 68, 0.05);
+    position: relative;
+}
+
+.plan-card.recommended h3 {
+    color: var(--secondary);
+}
+
+.faq-item h3 {
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.faq-item p {
+    padding-left: 15px;
+    border-left: 2px solid #334155;
+}

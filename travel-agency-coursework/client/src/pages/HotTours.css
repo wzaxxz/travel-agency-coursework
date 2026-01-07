@@ -1,0 +1,21 @@
+.hot-tours-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hot-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hot-header h1 {
+    color: #ef4444;
+    font-size: 2.5rem;
+}
+
+.tours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
